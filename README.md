@@ -5,3 +5,6 @@ The password generator app is an app that allows you to generate a random passwo
 ![pw](/Assets/pw.png)
 
 deployed site: https://pdavisdu.github.io/Password-generator/
+
+license: MIT
+contact: pdavisDU@gmail.com
