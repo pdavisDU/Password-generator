@@ -14,10 +14,10 @@ var aLength = "";
 //recursion - function calls itself call generate password from inside itself to restart it
 // data structure for special char and letters -- arrays for them
 function writePassword() {
-  var passwordpassword = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
   
-  passwordText.value = passwordpassword;
+  passwordText.value = password;
   
 }  
 // Add event listener to generate button
@@ -28,9 +28,9 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   var password = "";
   
-  var pLength = prompt("Choose password length");
+  var pLength = prompt("Choose password length (8-128)");
 
-  if (pLength < 8 && pLength > 128) {
+  if (pLength < 8 || pLength > 128) {
     alert("Ivalid: Must be between 8 and 128 characters");
     generatePassword();
   }
@@ -58,6 +58,7 @@ function generatePassword() {
   if (numbers === "Yes") {
     aLength += number
   }
+  
 
 for (var i=0; i < pLength; i++){
   password += aLength.charAt( Math.floor(Math.random() * aLength.length));
