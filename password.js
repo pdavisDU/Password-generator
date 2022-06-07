@@ -2,7 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 //var passwordDisplay = document.querySelector("#password")
 
-
 var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lettersLower = "abcdefghijklmnopqrstuvwxyz";
 var number = "0123456789";
@@ -16,18 +15,17 @@ var aLength = "";
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
+
   passwordText.value = password;
-  
-}  
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//need to create a generate password that will return 
+//need to create a generate password that will return
 
 function generatePassword() {
   var password = "";
-  
+
   var pLength = prompt("Choose password length (8-128)");
 
   if (pLength < 8 || pLength > 128) {
@@ -35,35 +33,33 @@ function generatePassword() {
     generatePassword();
   }
 
-  var lUpper = prompt("Do you want upper case characters? (Yes or No")
+  var lUpper = prompt("Do you want upper case characters? (Yes or No");
 
-  if (lUpper === "Yes") {
-    aLength += lettersUpper
+  if (lUpper === "Yes" || lUpper === "yes") {
+    aLength += lettersUpper;
   }
 
-  var lLower = prompt("Do you want lower case characters? (Yes or No)")
+  var lLower = prompt("Do you want lower case characters? (Yes or No)");
 
-  if (lLower === "Yes") {
-    aLength += lettersLower
+  if (lLower === "Yes" || lLower === "yes") {
+    aLength += lettersLower;
   }
 
-  var spec = prompt("Do you want special characters? (Yes or No)")
+  var spec = prompt("Do you want special characters? (Yes or No)");
 
-  if (spec === "Yes") {
-    aLength += specialChar
+  if (spec === "Yes" || spec === "yes") {
+    aLength += specialChar;
   }
 
-  var numbers = prompt("Do you want numbers? (Yes or No)")
+  var numbers = prompt("Do you want numbers? (Yes or No)");
 
-  if (numbers === "Yes") {
-    aLength += number
+  if (numbers === "Yes" || numbers === "yes") {
+    aLength += number;
   }
-  
 
-for (var i=0; i < pLength; i++){
-  password += aLength.charAt( Math.floor(Math.random() * aLength.length));
+  for (var i = 0; i < pLength; i++) {
+    password += aLength.charAt(Math.floor(Math.random() * aLength.length));
+  }
+
+  return password;
 }
-
-return password;
-}
-
